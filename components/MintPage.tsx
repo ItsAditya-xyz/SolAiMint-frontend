@@ -105,7 +105,7 @@ function MintPage() {
             <div>
                 <div className="bg-yellow-300 text-gray-900 mx-auto px-5  flex items-center justify-center py-5">
                     <div>
-                    SolAiMint is in Beta. Things may break. If you don't received the minted NFT. see them <span><a href="https://magiceden.io/u/FcEs1nSeFiF54gmYZNaTXau8gmhTBN4VBgSsJtGhZsLw" className="text-blue-500 underline">here</a></span></div></div>
+                    SolAiMint is in Beta. Things may break. If you do not received the minted NFT. see them <span><a href="https://magiceden.io/u/FcEs1nSeFiF54gmYZNaTXau8gmhTBN4VBgSsJtGhZsLw" className="text-blue-500 underline">here</a></span></div></div>
                 <h1 className='my-4 text-3xl font-bold leading-tight text-center'>
                     Generate and Mint AI generated Images on Solana Blockchain</h1>
                 <div className='flex flex-shrink items-center justify-center space-x-1'>
