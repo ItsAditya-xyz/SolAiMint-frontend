@@ -17,7 +17,7 @@ function MintPage() {
     const handleGenerateImage = async () => {
         generateImageURL && setGenerateImageURL('');
         setLoadingAiImage(true);
-        if (imageInput.length > 0) {
+        if (imageInput.length > 3) {
             const response = await fetch('https://mintedtweets.cordify.app/request-art', {
                 method: 'POST',
                 headers: {
@@ -57,6 +57,11 @@ function MintPage() {
                     console.log("waiting for image to generate")
                 }
             }
+        }
+        else{
+            alert("Please enter vivid Image desceription first")
+            setLoadingAiImage(false);
+            
         }
 
 
@@ -98,7 +103,10 @@ console.log(data)
         <div className='w-full my-10'>
 
             <div>
+            <h1 className='my-4 text-3xl font-bold leading-tight text-center'>
+                Generate and Mint AI generated Images on Solana Blockchain</h1>
                 <div className='flex flex-shrink items-center justify-center space-x-1'>
+                   
                     <input type="text" placeholder="Enter your image description"
                         value={imageInput}
                         onChange={(e) => setImageInput(e.target.value)}
