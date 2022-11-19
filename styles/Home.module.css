@@ -10,7 +10,7 @@
 .AppHeader {
   height: 90px;
   display: flex;
-  background-color: black;
+  background-color: rgb(8, 6, 35);
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -20,6 +20,11 @@
   padding-right: 20px;
   flex-wrap: wrap;
 }
+
+.primary{
+  background-color: rgb(8, 6, 35);
+}
+
 
 .AppBody {
   height: 100%;

@@ -5,25 +5,29 @@ import { AppBar } from '../components/AppBar'
 
 import { PingButton } from '../components/PingButton'
 import Head from 'next/head'
+import { useWallet } from '@solana/wallet-adapter-react';
+import { useEffect } from 'react'
 
+import MintPage from '../components/MintPage'
 const Home: NextPage = (props) => {
-
+	const { publicKey, sendTransaction } = useWallet();
+  useEffect(() => {
+    console.log(publicKey)
+  }, [publicKey])
   return (
-    <div className={styles.App}>
-      <Head>
-        <title>Mint NFT using AI</title>
-        <meta
-          name="description"
-          content="Wallet-Adapter Example"
-        />
-      </Head>
-      <WalletContextProvider>
-        <AppBar />
-        <div className={styles.AppBody}>
-          <PingButton />
-        </div>
-      </WalletContextProvider >
-    </div>
+
+
+    <WalletContextProvider>
+      <AppBar />
+      <div >
+     
+      <MintPage />
+      </div>
+     
+       
+    </WalletContextProvider >
+
+
   );
 }
 
