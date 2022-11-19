@@ -58,10 +58,10 @@ function MintPage() {
                 }
             }
         }
-        else{
+        else {
             alert("Please enter vivid Image desceription first")
             setLoadingAiImage(false);
-            
+
         }
 
 
@@ -71,9 +71,9 @@ function MintPage() {
     }
 
     const mintImage = async () => {
-        if(isMinting)return
+        if (isMinting) return
         setIsMinting(true);
-    
+
         const response = await fetch('https://mintedtweets.cordify.app/mint-solana-nft', {
             method: 'POST',
             headers: {
@@ -89,24 +89,27 @@ function MintPage() {
         });
         const data = await response.json();
         setIsMinting(false);
-console.log(data)
+        console.log(data)
         const errorMessage = data.response.error_message;
-        if(errorMessage){
+        if (errorMessage) {
             alert(errorMessage)
         }
-       else{
-        alert("NFT Minted Successfully View in your Solana Wallet")
-       }
+        else {
+            alert("NFT Minted Successfully View in your Solana Wallet")
+        }
         console.log(data)
     }
     return (
-        <div className='w-full my-10'>
+        <div className='w-full'>
 
             <div>
-            <h1 className='my-4 text-3xl font-bold leading-tight text-center'>
-                Generate and Mint AI generated Images on Solana Blockchain</h1>
+                <div className="bg-yellow-300 text-gray-900 mx-auto px-5  flex items-center justify-center py-5">
+                    <div>
+                    SolAiMint is in Beta. Things may break. If you don't received the minted NFT. see them <span><a href="https://magiceden.io/u/FcEs1nSeFiF54gmYZNaTXau8gmhTBN4VBgSsJtGhZsLw" className="text-blue-500 underline">here</a></span></div></div>
+                <h1 className='my-4 text-3xl font-bold leading-tight text-center'>
+                    Generate and Mint AI generated Images on Solana Blockchain</h1>
                 <div className='flex flex-shrink items-center justify-center space-x-1'>
-                   
+
                     <input type="text" placeholder="Enter your image description"
                         value={imageInput}
                         onChange={(e) => setImageInput(e.target.value)}
@@ -136,9 +139,9 @@ console.log(data)
                 <div className='flex justify-center'>
                     {(generateImageURL && publicKey) && <div className=''>
                         <button className={` bg-[rgb(8,6,35)] hover:bg-[rgb(23,18,58)] text-white px-10 py-3 rounded-md shadown-sm primary hover:text-gray-200 `}
-                        
-                        onClick={mintImage}>
-                            {isMinting? "Minting...":"Mint"}
+
+                            onClick={mintImage}>
+                            {isMinting ? "Minting..." : "Mint"}
                         </button></div>}
 
                     {(generateImageURL && !publicKey) && <div className=''>
